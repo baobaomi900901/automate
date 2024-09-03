@@ -1,0 +1,14 @@
+# git commit -m 模板
+cd $(pwd)
+
+# 检查参数是否等于 3
+if [ $# -ne 3 ]; then
+    echo "@_错误_@:该命令需要接收三个参数：单号、提交人和内容。"
+    exit 1
+fi
+
+echo "单号:$1, 提交人:$2, 内容:$3"
+
+git commit -m "单号:$1, 提交人:$2, 内容:$3"
+git status
+git push origin
